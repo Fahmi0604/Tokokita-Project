@@ -6,5 +6,5 @@ $modal =$_POST['modal'];
 $harga = $_POST['harga'];
 $jumlah = $_POST["jumlah"];
 mysqli_query($conn, "INSERT INTO barang VALUES(0,'$nama','$jenis','$suplier','$modal','$harga','$jumlah')");
-header("location:index.php?pesan=input");
+header("location:index2.php?pesan=input");
 ?>

@@ -8,5 +8,5 @@ $modal =$_POST['modal'];
 $harga = $_POST['harga'];
 $jumlah = $_POST["jumlah"];
 mysqli_query($conn, "UPDATE barang SET nama=\"$nama\", jenis=\"$jenis\", suplier=\"$suplier\", modal='$modal', harga='$harga', jumlah='$jumlah' WHERE id='$id'");
-header("location:index.php?pesan=update");
+header("location:index2.php?pesan=update");
 ?>

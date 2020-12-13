@@ -61,7 +61,7 @@
 
 	<div class="card">
 		<div class="card-header">
-			<h3> Data Pembelian </h3>
+			<h3> Data Barang </h3>
 		</div>
 		<div class="card-body">
             <a class="btn btn-primary" href="input.php">+ Tambah Stok Barang</a>

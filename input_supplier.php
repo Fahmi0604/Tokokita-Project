@@ -10,7 +10,7 @@
     </div>
     
     <br/>
-    <a href="index.php">Lihat Semua Data</a>
+    <a href="index4.php">Lihat Semua Data</a>
     <br/>
 
     <h3>Input Barang</h3>

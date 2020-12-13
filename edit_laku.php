@@ -9,7 +9,7 @@
 <h3>Sistem Penjualan Barang</h3>
 </div>
 <br/>
-<a href="index.php">Lihat Semua Data</a>
+<a href="index3.php">Lihat Semua Data</a>
 <br/>
 <h3>Edit Barang</h3>
 <?php

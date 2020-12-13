@@ -61,7 +61,7 @@
 
 	<div class="card">
 		<div class="card-header">
-			<h3> Data Pembelian </h3>
+			<h3> Data Supplier </h3>
 		</div>
 		<div class="card-body">
             
