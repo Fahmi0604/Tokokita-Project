@@ -41,8 +41,8 @@
 	<a href="index.php">Data Pembelian</a>
 	<a href="index2.php">Data Barang</a>
 	<a href="index3.php">Data Penjualan</a>
-	<a href="index4.php">Data Supplier</a>
-	<a style="margin-bottom:10px" href="lap_barang.php" target="_blank" ><span class='glyphicon glyphicon-print'></span>  Cetak</a>
+    <a href="index4.php">Data Supplier</a>
+    <a style="margin-bottom:10px" href="lap_barang.php" target="_blank" ><span class='glyphicon glyphicon-print'></span>  Cetak</a>
 	</div>
 
 	<br/>
@@ -64,59 +64,50 @@
 			<h3> Data Pembelian </h3>
 		</div>
 		<div class="card-body">
-			<a class="btn btn-primary" href="input_beli.php">+ Tambah Pembelian</a>
-			<br><br>
-			
-			<table border="1" id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-				<tr>
-					<th>No</th>
-					<th>Tgl Beli</th>
-					<th>Nama Barang</th>
-					<th>Harga Beli</th>
-					<th>Jumlah</th>
-					<th>Diskon</th>
-					<th>Total Harga</th>
-					<th>Opsi</th>
-				</tr>
-				</thead>
+            
+            <a class="btn btn-primary" href="input_supplier.php">+ Tambah Supplier</a>
+            <br><br>
 
-			<?php
-			include "koneksi.php";
-			$query_mysql = mysqli_query($conn, "SELECT * FROM barang_beli ORDER BY id DESC")or die(mysql_error());
-			$nomor = 1;
-			while($data = mysqli_fetch_array($query_mysql)){
-			?>
+            <table border="1" id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID Supplier</th>
+                        <th>Nama Supplier</th>
+                        <th>No Telp</th>
+                        <th>Alamat</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
 
-				<tr>
-					<td><?php echo $nomor++; ?></td>
-					<td><?php echo date("d-m-Y", strtotime($data['tanggal_beli'])); ?></td>
-					<td><?php echo $data['nama_barang']; ?></td>
-					<td><?php echo $data['harga_beli']; ?></td>
-					<td><?php echo $data['jumlah']; ?></td>
-					<td><?php echo $data['diskon']; ?></td>
-					<td><?php echo number_format($data['total_harga']); ?></td>
-					<td>
-					<a class="btn btn-warning" href="edit_beli.php?id=<?php echo $data['id']; ?>">Edit</a> |
-					<a class="btn btn-danger" href="hapus_beli.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
-					</td>
-				</tr>
+            <?php
+            include "koneksi.php";
+            $query_mysql = mysqli_query($conn, "SELECT * FROM supplier ORDER BY id DESC")or die(mysql_error());
+            $nomor = 1;
+            while($data = mysqli_fetch_array($query_mysql)){
+            ?>
+                <tr>
+                    <td><?php echo $data['id'] ?></td>
+                    <td><?php echo $data['nama_supplier']; ?></td>
+                    <td><?php echo $data['no_telp']; ?></td>
+                    <td><?php echo $data['alamat']; ?></td>
+                    <td>
+                    <a class="btn btn-warning" href="edit_supplier.php?id=<?php echo $data['id']; ?>">Edit</a> |
+                    <a class="btn btn-danger" href="hapus_supplier.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
+                    </td>
+                </tr>
+            <?php } ?>
 
-			<?php } ?>
+                <tfoot>
+                    <tr>
+                        <th>ID Supplier</th>
+                        <th>Nama Supplier</th>
+                        <th>No Telp</th>
+                        <th>Alamat</th>
+                        <th>Opsi</th>
+                    </tr>
+                </tfoot>
 
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>Tgl Beli</th>
-					<th>Nama Barang</th>
-					<th>Harga Beli</th>
-					<th>Jumlah</th>
-					<th>Diskon</th>
-					<th>Total Harga</th>
-					<th>Opsi</th>
-				</tr>
-			</tfoot>
-			</table>
+            </table>
 		</div>
 	</div>
 </div>
