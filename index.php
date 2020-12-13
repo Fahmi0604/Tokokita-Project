@@ -151,15 +151,16 @@
 	<?php } ?>
 	</table>
 
-	<br><br><a class="tombol" href="input_supplier.php">+ Tambah Penjualan</a>
+	<br><br><a class="tombol" href="input_supplier.php">+ Tambah Supplier</a>
 	<h3>Data Penjualan</h3>
 
 	<table border="1" class="table">
 		<tr>
-			<th>ID</th>
+			<th>ID Supplier</th>
 			<th>Nama Supplier</th>
 			<th>No Telp</th>
 			<th>Alamat</th>
+			<th>Opsi</th>
 		</tr>
 
 	<?php
@@ -174,8 +175,8 @@
 			<td><?php echo $data['no_telp']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
 			<td>
-			<a href="edit_laku.php?id=<?php echo $data['id']; ?>">Edit</a> |
-			<a href="hapus_laku.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
+			<a href="edit_supplier.php?id=<?php echo $data['id']; ?>">Edit</a> |
+			<a href="hapus_supplier.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
 			</td>
 		</tr>
 	<?php } ?>
