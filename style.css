@@ -1,15 +1,21 @@
 body{
 font-family: 'roboto';
-color: #000;
+color: #ffffff;
 }
 .judul{
-background: #87D1D8;
+background: #03506f;
 padding: 20px;
 text-align: center;
 }
-.judul h1,h2,h3{
+.judul h1{
 height: 15px;
+color: #ffffff;
 }
+
+.judul h3{
+    height: 15px;
+    color: #ffffff;
+    }
 
 /* a{
 padding: 5px;
@@ -30,7 +36,7 @@ padding: 10px 20px ;
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #03506f; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -41,7 +47,7 @@ padding: 10px 20px ;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #ffffff;
     display: block;
     transition: 0.3s;
   }
@@ -64,7 +70,7 @@ padding: 10px 20px ;
   .openbtn {
     font-size: 25px;
     cursor: pointer;
-    background-color: #87D1D8;
+    background-color: #03506f;
     color: white;
     padding: 1px 15px;
     border: none;

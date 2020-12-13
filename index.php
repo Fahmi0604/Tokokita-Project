@@ -28,22 +28,23 @@
 <body>
 
 <div class="judul">
-<button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+<button class="openbtn" onclick="openNav()">&#9776;</button>
 <h1>-- Toko Kita --</h1>
+<br>
 <h3>Sistem Penjualan Barang</h3>
 </div>
 
-<div class="main">
+<div class="main" id="main">
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
+	<div id="mySidebar" class="sidebar">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="#">About</a>
+	<a href="#">Services</a>
+	<a href="#">Clients</a>
+	<a href="#">Contact</a>
+	</div>
 
-<br/>
+	<br/>
 	<?php
 	if(isset($_GET['pesan'])){
 	$pesan = $_GET['pesan'];
