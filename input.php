@@ -12,7 +12,7 @@
 <a href="index2.php">Lihat Semua Data</a>
 <br/>
 <h3>Input Barang</h3>
-<form action="simpan.php" method="post">
+<form action="simpan.php" method="post" enctype="multipart/form-data">
 <table border="0">
 <tr>
 <td><p>Nama</td>
@@ -48,6 +48,11 @@
 <td><p>Jumlah</td>
 <td>:</td>
 <td><input name = "jumlah" type = number><br></td>
+</tr>
+<tr>
+<td><p>Upload Gambar</td>
+<td>:</td>
+<td><input type="file" name="gambar"><br></td>
 </tr>
 <tr>
 <td><p></td>

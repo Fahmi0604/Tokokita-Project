@@ -12,7 +12,8 @@
 	<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.js"></script>	 -->
 
-	<!-- online source -->
+    <!-- online source -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -45,19 +46,26 @@
     <a style="margin-bottom:10px" href="lap_barang.php" target="_blank" ><span class='glyphicon glyphicon-print'></span>  Cetak</a>
 	</div>
 
-	<br/>
-	<?php
-	if(isset($_GET['pesan'])){
-	$pesan = $_GET['pesan'];
-	if($pesan == "input"){
-	echo "Data berhasil di input.";
-	}else if($pesan == "update"){
-	echo "Data berhasil di update.";
-	}else if($pesan == "hapus"){
-	echo "Data berhasil di hapus.";
-	}
-	}
-	?>
+    <br/>
+    
+    <div class="card text-white bg-info" style="font-size: 15px;">
+        <div class="card-body">
+        <!-- <p class="material-icons">announcement </p> -->
+            <?php
+            if(isset($_GET['pesan'])){
+            $pesan = $_GET['pesan'];
+            if($pesan == "input"){
+            echo "Data berhasil di input.";
+            }else if($pesan == "update"){
+            echo "Data berhasil di update.";
+            }else if($pesan == "hapus"){
+            echo "Data berhasil di hapus.";
+            }
+            }
+            ?>
+        </div>
+    </div>
+    <br><br>
 
 	<div class="card">
 		<div class="card-header">
@@ -71,6 +79,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Foto Produk</th>
                         <th>Nama Barang</th>
                         <th>Jenis</th>
                         <th>Supplier</th>
@@ -89,6 +98,7 @@
 
                 <tr>
                     <td><?php echo $nomor++; ?></td>
+                    <td><?php echo "<img src='image/$data[gambar]' width='100' height='100' />";?></td>
                     <td><?php echo $data['nama']; ?></td>
                     <td><?php echo $data['jenis']; ?></td>
                     <td><?php echo $data['suplier']; ?></td>
@@ -97,7 +107,7 @@
                     <td><?php echo $data['jumlah']; ?></td>
                     <td>
                     <a class="btn btn-warning" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
-                    <a class="btn btn-danger" href="hapus.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
+                    <a class="btn btn-danger" href="hapus.php?id=<?php echo $data['id']; echo $data['nama']; ?>" onclick="return confirm('Anda Yakin Akan Menghapus')">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>
@@ -105,6 +115,7 @@
                 <tfoot>
                     <tr>
                         <th>No</th>
+                        <th>Foto Produk</th>
                         <th>Nama Barang</th>
                         <th>Jenis</th>
                         <th>Supplier</th>

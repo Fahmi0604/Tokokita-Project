@@ -46,18 +46,24 @@
 	</div>
 
 	<br/>
-	<?php
-	if(isset($_GET['pesan'])){
-	$pesan = $_GET['pesan'];
-	if($pesan == "input"){
-	echo "Data berhasil di input.";
-	}else if($pesan == "update"){
-	echo "Data berhasil di update.";
-	}else if($pesan == "hapus"){
-	echo "Data berhasil di hapus.";
-	}
-	}
-	?>
+	<div class="card text-white bg-info" style="font-size: 15px;">
+        <div class="card-body">
+        <!-- <p class="material-icons">announcement </p> -->
+            <?php
+            if(isset($_GET['pesan'])){
+            $pesan = $_GET['pesan'];
+            if($pesan == "input"){
+            echo "Data berhasil di input.";
+            }else if($pesan == "update"){
+            echo "Data berhasil di update.";
+            }else if($pesan == "hapus"){
+            echo "Data berhasil di hapus.";
+            }
+            }
+            ?>
+        </div>
+    </div>
+    <br><br>
 
 	<div class="card">
 		<div class="card-header">

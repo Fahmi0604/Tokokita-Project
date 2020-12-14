@@ -17,6 +17,10 @@ color: #ffffff;
     color: #ffffff;
     }
 
+.material-icons {
+    font-size: 15px; 
+  }
+
 /* a{
 padding: 5px;
 text-decoration: none;

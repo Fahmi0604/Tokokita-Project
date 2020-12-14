@@ -5,6 +5,20 @@ $suplier = $_POST['suplier'];
 $modal =$_POST['modal']; 
 $harga = $_POST['harga'];
 $jumlah = $_POST["jumlah"];
-mysqli_query($conn, "INSERT INTO barang VALUES(0,'$nama','$jenis','$suplier','$modal','$harga','$jumlah')");
-header("location:index2.php?pesan=input");
+$nama_gambar = $_FILES['gambar']['name'];
+$tmp_file = $_FILES['gambar']['tmp_name'];
+
+$path = "image/".$nama_gambar;
+
+    if (move_uploaded_file($tmp_file,  $path)) {
+        
+        mysqli_query($conn, "INSERT INTO barang VALUES(0,'$nama_gambar','$nama','$jenis','$suplier','$modal','$harga','$jumlah')");
+        header("location:index2.php?pesan=input"); // Redirectke halaman index.php
+
+    } else {
+        echo "Kemungkinan hacking!\n";
+    }
+        
+
+
 ?>

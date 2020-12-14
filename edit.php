@@ -19,7 +19,7 @@ $query_mysql = mysqli_query($conn, "SELECT * FROM barang WHERE id='$id'")or die(
 $nomor = 1;
 while($data = mysqli_fetch_array($query_mysql)){
 ?>
-<form action="update.php" method="post">
+<form action="update.php" method="post" enctype="multipart/form-data">
 <table>
 <tr>
 <td>Nama</td>
@@ -60,6 +60,13 @@ while($data = mysqli_fetch_array($query_mysql)){
 <td><p>Jumlah</td>
 <td>:</td>
 <td><input name = "jumlah" type = number value="<?php echo $data['jumlah'] ?>"><br></td>
+</tr>
+<tr>
+<td>Upload Gambar</td>
+<td>:</td>
+<td>
+<input type="file" name="gambar" value="<?php echo $data['gambar'] ?>">
+</td>
 </tr>
 <tr>
 <td></td>
