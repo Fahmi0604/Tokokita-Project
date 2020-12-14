@@ -24,6 +24,7 @@ if($nama_gambar!=null){
         echo "Kemungkinan hacking!\n";
     }
 }else {
+    mysqli_query($conn, "UPDATE barang SET nama=\"$nama\", jenis=\"$jenis\", suplier=\"$suplier\", modal='$modal', harga='$harga', jumlah='$jumlah' WHERE id='$id'");
     header("location:index2.php?pesan=update");
 }
 

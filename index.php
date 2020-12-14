@@ -100,7 +100,7 @@
 					<td><?php echo $data['nama_barang']; ?></td>
 					<td><?php echo $data['harga_beli']; ?></td>
 					<td><?php echo $data['jumlah']; ?></td>
-					<td><?php echo $data['diskon']; ?></td>
+					<td><?php echo $data['diskon']."%"; ?></td>
 					<td><?php echo number_format($data['total_harga']); ?></td>
 					<td>
 					<a class="btn btn-warning" href="edit_beli.php?id=<?php echo $data['id']; ?>">Edit</a> |

@@ -1,0 +1,28 @@
+body{
+    font-family: 'roboto';
+    color: #000000;
+}
+.judul{
+    background: #03506f;
+    padding: 20px;
+    text-align: center;
+}
+.judul h1{
+    height: 15px;
+    color: #ffffff;
+}
+    
+.judul h3{
+    height: 15px;
+    color: #ffffff;
+}
+
+.btn-primary {
+    margin-left: 30px;
+}
+
+.card {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
+}
