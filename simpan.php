@@ -8,7 +8,11 @@ $jumlah = $_POST["jumlah"];
 $nama_gambar = $_FILES['gambar']['name'];
 $tmp_file = $_FILES['gambar']['tmp_name'];
 
-$path = "image/".$nama_gambar;
+$nama_gambar2 = "default.jpg";
+
+if($nama_gambar != null) {
+    
+    $path = "image/".$nama_gambar;
 
     if (move_uploaded_file($tmp_file,  $path)) {
         
@@ -18,7 +22,12 @@ $path = "image/".$nama_gambar;
     } else {
         echo "Kemungkinan hacking!\n";
     }
-        
+}else {
+    
+    mysqli_query($conn, "INSERT INTO barang VALUES(0, '$nama_gambar2', '$nama','$jenis','$suplier','$modal','$harga','$jumlah')");
+    header("location:index2.php?pesan=input");
+
+}
 
 
 ?>

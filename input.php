@@ -44,11 +44,25 @@
                     </select><br>
                     </td>
                 </tr>
+
                 <tr>
-                    <td><p>Suplier</td>
-                    <td>:</td>
-                    <td><input name = "suplier" type = text><br></td>
+				<td><p>Supplier</td>
+				<td>:</td>
+				<td>									
+				<select name="suplier">
+					<?php 
+					include 'koneksi.php'; 
+					$supplier = mysqli_query($conn, "SELECT * FROM supplier");
+					while($data=mysqli_fetch_array($supplier)){
+						?>	
+						<option value="<?php echo $data['nama_supplier']; ?>"><?php echo $data['nama_supplier'] ?></option>
+						<?php 
+					}
+					?>
+				</select>
+				</td>
                 </tr>
+                
                 <tr>
                     <td><p>Modal</td>
                     <td>:</td>

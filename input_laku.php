@@ -49,7 +49,7 @@
 					}
 					?>
 				</select>
-			</td>
+				</td>
 			</tr>
 			<tr>
 			<td><p>Harga Jual</td>

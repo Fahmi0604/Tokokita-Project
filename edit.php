@@ -44,36 +44,46 @@
                 </td>
                 </tr>
                 <tr>
-                <td>Jenis Barang</td>
-                <td>:</td>
-                <td><select name="jenis" id="jenis">
-                <option value="">-- Pilih --</option>
-                <option value="Makanan"<?php if ($data['jenis']=="Makanan") { echo "selected=\"selected\""; } ?>>Makanan
-                </option>
-                <option value="Minuman"<?php if ($data['jenis']=="Minuman") { echo "selected=\"selected\""; } ?>>Minuman</option>
-                </select></td>
+                    <td>Jenis Barang</td>
+                    <td>:</td>
+                    <td><select name="jenis" id="jenis">
+                    <option value="">-- Pilih --</option>
+                    <option value="Makanan"<?php if ($data['jenis']=="Makanan") { echo "selected=\"selected\""; } ?>>Makanan
+                    </option>
+                    <option value="Minuman"<?php if ($data['jenis']=="Minuman") { echo "selected=\"selected\""; } ?>>Minuman</option>
+                    </select></td>
                 </tr>
                 <tr>
-                <td>Suplier</td>
-                <td>:</td>
-                <td>
-                <input type="text" name="suplier" value="<?php echo $data['suplier'] ?>">
-                </td>
+                    <td>Supplier</td>
+                    <td>:</td>
+                    <td>
+                    <select name="suplier">
+                        <?php 
+                        include 'koneksi.php'; 
+                        $supplier = mysqli_query($conn, "SELECT * FROM supplier");
+                        while($data1=mysqli_fetch_array($supplier)){
+                            ?>	
+                            <option value="<?php echo $data1['nama_supplier']; ?>"><?php echo $data1['nama_supplier'] ?></option>
+                            <?php 
+                        }
+                        ?>
+                    </select>
+                    </td>
                 </tr>
                 <tr>
                 <td><p>Modal</td>
                 <td>:</td>
-                <td><input name = "modal" type = number value="<?php echo $data['modal'] ?>"><br></td>
+                <td><input name="modal" type ="number" value="<?php echo $data['modal'] ?>"><br></td>
                 </tr>
                 <tr>
                 <td><p>Harga Jual</td>
                 <td>:</td>
-                <td><input name = "harga" type = number value="<?php echo $data['harga'] ?>"><br></td>
+                <td><input name="harga" type ="number" value="<?php echo $data['harga'] ?>"><br></td>
                 </tr>
                 <tr>
                 <td><p>Jumlah</td>
                 <td>:</td>
-                <td><input name = "jumlah" type = number value="<?php echo $data['jumlah'] ?>"><br></td>
+                <td><input name="jumlah" type ="number" value="<?php echo $data['jumlah'] ?>"><br></td>
                 </tr>
                 <tr>
                 <td>Upload Gambar</td>
