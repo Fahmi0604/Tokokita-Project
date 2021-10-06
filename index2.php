@@ -98,7 +98,7 @@
 
                 <tr>
                     <td><?php echo $nomor++; ?></td>
-                    <td><?php echo "<img src='image/$data[gambar]' width='100' height='100' />";?></td>
+                    <td><?php echo "<img src='image/$data[gambar] width='100' height='100' />";?></td>
                     <td><?php echo $data['nama']; ?></td>
                     <td><?php echo $data['jenis']; ?></td>
                     <td><?php echo $data['suplier']; ?></td>

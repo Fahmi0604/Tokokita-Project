@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 06:44 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Waktu pembuatan: 06 Okt 2021 pada 20.18
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,35 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `barang`
 --
 
 CREATE TABLE `barang` (
   `id` int(11) NOT NULL,
-  `gambar` varchar(100) NOT NULL,
   `nama` varchar(60) NOT NULL,
   `jenis` varchar(30) NOT NULL,
   `suplier` varchar(60) NOT NULL,
   `modal` int(11) NOT NULL,
   `harga` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL
+  `jumlah` int(11) NOT NULL,
+  `gambar` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`id`, `gambar`, `nama`, `jenis`, `suplier`, `modal`, `harga`, `jumlah`) VALUES
-(2, '818136251_8a9f064e-6cf5-45a7-bdcb-aea338b914f6_1000_1000.jpg', 'TANGO', 'Makanan', 'PT. AGUNG ABDI', 2000, 3000, 2450),
-(5, 'melon_pro.png', 'WAFER MELON', 'Makanan', 'PT. AGUNG ABDI', 2000, 3000, 1300),
-(18, '81pSE4VgqbL._SL1500_.jpg', 'Oreo Cheese', 'Makanan', 'PT Mabisco', 1000, 2000, 5000),
-(19, 'Oreo_biru.jpg', 'Oreo', 'Makanan', 'PT Cinta Abadi', 3000, 4000, 200),
-(23, '19792438_a69026c2-4fea-4a72-bdd3-1edae9f0df1a_1000_1000.jpg', 'Aqua', 'Minuman', 'PT Cinta Abadi', 3000, 3500, 100);
+INSERT INTO `barang` (`id`, `nama`, `jenis`, `suplier`, `modal`, `harga`, `jumlah`, `gambar`) VALUES
+(2, 'TANGO', 'Makanan', 'PT Cinta Abadi', 2000, 3000, 2460, 'melon_pro.png'),
+(5, 'WAFER MELON', 'Makanan', 'PT Cinta Abadi', 2000, 3000, 1249, 'Oreo_biru.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_beli`
+-- Struktur dari tabel `barang_beli`
 --
 
 CREATE TABLE `barang_beli` (
@@ -66,18 +63,18 @@ CREATE TABLE `barang_beli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `barang_beli`
+-- Dumping data untuk tabel `barang_beli`
 --
 
 INSERT INTO `barang_beli` (`id`, `tanggal_beli`, `nama_barang`, `harga_beli`, `jumlah`, `diskon`, `total_harga`) VALUES
 (7, '2020-12-02', 'TANGO', 10000, 100, 5, 950000),
 (8, '2020-12-02', 'TANGO', 10000, 100, 5, 950000),
-(9, '2020-12-08', 'TANGO', 1000, 300, 5, 285000);
+(9, '2020-12-08', 'TANGO', 6000, 12, 5, 47500);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_laku`
+-- Struktur dari tabel `barang_laku`
 --
 
 CREATE TABLE `barang_laku` (
@@ -89,17 +86,16 @@ CREATE TABLE `barang_laku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `barang_laku`
+-- Dumping data untuk tabel `barang_laku`
 --
 
 INSERT INTO `barang_laku` (`id`, `tanggal_jual`, `nama_barang`, `harga_jual`, `jumlah`) VALUES
-(18, '2020-12-01', 'TANGO', 4000, 10),
-(21, '2020-12-14', 'WAFER MELON', 3000, 30);
+(18, '2020-12-01', 'TANGO', 4000, 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Struktur dari tabel `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -110,69 +106,68 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `supplier`
+-- Dumping data untuk tabel `supplier`
 --
 
 INSERT INTO `supplier` (`id`, `nama_supplier`, `no_telp`, `alamat`) VALUES
 (1212, 'PT Cinta Abadi', '082123123123', 'Malang '),
-(1213, 'PT Barokah Abadi', '082111222333', 'Malang'),
-(1216, 'Danone', '082111222333', 'Perancis');
+(1213, 'PT Barokah Abadi', '082111222333', 'Malang');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `barang_beli`
+-- Indeks untuk tabel `barang_beli`
 --
 ALTER TABLE `barang_beli`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `barang_laku`
+-- Indeks untuk tabel `barang_laku`
 --
 ALTER TABLE `barang_laku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `supplier`
+-- Indeks untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `barang_beli`
+-- AUTO_INCREMENT untuk tabel `barang_beli`
 --
 ALTER TABLE `barang_beli`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `barang_laku`
+-- AUTO_INCREMENT untuk tabel `barang_laku`
 --
 ALTER TABLE `barang_laku`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `supplier`
+-- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1217;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1215;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
